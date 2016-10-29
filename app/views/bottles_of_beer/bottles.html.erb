@@ -1,0 +1,19 @@
+<style>
+  body {
+    background-image: url("http://www.imgbase.info/images/safe-wallpapers/photography/food/38703_food_beer.jpg");
+  }
+</style>
+<% if @bottles_of_beer == 1 %>
+  <h1><%= @bottles_of_beer %> bottle of beer on the wall, <%= @bottles_of_beer %> bottle of beer!</h1>
+<% else %>
+  <h1><%= @bottles_of_beer %> bottles of beer on the wall, <%= @bottles_of_beer %> bottles of beer!</h1>
+<%end%>
+<% if @bottles_of_beer > 0 %>
+  <%= link_to "Take one down,", take_path(@bottles_of_beer) %>
+<% else %>
+  <%= link_to "Go to the store,", store_path %>
+<% end %>
+<% beer_bottle = image_tag("/images/1477726448_bar_beer.png", size: "115x60", alt: "Bottle of beer!") %>
+<% @bottles_of_beer.times do %>
+  <%= beer_bottle %>
+<% end %>

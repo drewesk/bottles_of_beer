@@ -1,0 +1,13 @@
+<style>
+  body {
+    background-image: url("http://www.imgbase.info/images/safe-wallpapers/photography/food/38703_food_beer.jpg");
+  }
+</style>
+
+<h1>and pass it around...</h1>
+<% if (@bottles_of_beer -1) == 1 %>
+  <%= link_to "#{@bottles_of_beer - 1} bottle of beer on the wall!", bottles_path(@bottles_of_beer - 1) %>
+<% else %>
+  <%= link_to "#{@bottles_of_beer - 1} bottles of beer on the wall!", bottles_path(@bottles_of_beer - 1) %>
+<% end %>
+
